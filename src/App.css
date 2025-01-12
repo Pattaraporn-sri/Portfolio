@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Serif+Text:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Train+One&display=swap");
+
+@keyframes mymove {
+  from {
+    transform: translateY(100%); /* เริ่มจากตำแหน่งล่างสุด */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* เริ่มจากตำแหน่งล่างสุด */
+    opacity: 1;
+  }
+}
+@layer utilities {
+  .animation-mymove {
+    animation: mymove 2s forwards;
+  }
+}
+@keyframes top {
+  from {
+    transform: translateY(-100%); /* เริ่มจากตำแหน่งบนสุด */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* เริ่มจากตำแหน่งบนสุด */
+    opacity: 1;
+  }
+}
+@layer utilities {
+  .animation-top {
+    animation: top 2s forwards;
+  }
+}
+
+@keyframes Move {
+  from {
+    transform: translateX(100%); /*เลื่อนจากซ้ายไปขวา*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@layer utilities {
+  .animation-Move {
+    animation: Move 2s forwards;
+  }
+}
+
+@keyframes MyMove {
+  from {
+    transform: translateX(-100%); /*เลื่อนจากขวาไปซ้าย*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.Hidden {
+  opacity: 0; /* ซ่อนองค์ประกอบก่อน */
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animation-MyMove {
+  opacity: 1; /* แสดงองค์ประกอบ */
+  transform: translateX(0); /* เลื่อนกลับไปยังตำแหน่งปกติ */
+  animation: MyMove 2s ease-out forwards;
+}
+
+::-webkit-scrollbar {
+  display: none; /*ลบ scrollbar ใน parallax*/
+}
+.parallax-container {
+  overflow: visible; /* Ensure the content is visible */
+}
+@keyframes updown-LeftRight {
+  0% {
+    transform: translate(0, 0) rotate(0deg); /*เริ่มต้นที่ตำแหน่งปกติ */
+  }
+  25% {
+    transform: translate(-50px, -40px) rotate(10deg); /*บินไปทางซ้ายบน */
+  }
+  50% {
+    transform: translate(50px, 40px) rotate(20deg); /*บินไปทางขวาล่าง */
+  }
+  75% {
+    transform: translate(-10px, -20px) rotate(10deg); /*บินกลับไปด้านบน */
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg); /*กลับไปสู่ตำแหน่งเดิม */
+  }
+}
+@layer utilities {
+  .animation-updown {
+    animation: updown-LeftRight 5s infinite ease-in-out;
+  }
+}
+@keyframes butterfly-flutter {
+  0% {
+    width: 100px;
+  }
+  50% {
+    width: 125px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@layer utilities{
+ .animation-butterfly-flutter {
+  animation: butterfly-flutter 0.45s infinite cubic-bezier(0.42, 0, 0.58, 1);
+  animation-direction: alternate;
+} 
+}
+
+@keyframes butt-topdown {
+  from {
+    margin-top: 10px;
+  }
+  to {
+    margin-top: -20px;
+  }
+}
+.animation-butt-topdown {
+  animation: butt-topdown 0.25s infinite ease-in-out;
+}
+
+
+/*Butterfly*/
+@keyframes butterfly {
+  0% {
+    transform: translate(0, 0); /*จุดเริ่มต้น*/
+  }
+  /* 25% {
+    transform: translate(25%, -30%); เคลื่อนที่ไปที่ 25% ในแนวนอนและ -30% ในแนวตั้ง
+  } */
+  /* 50% {
+    transform: translate(50%, 0); จุดกลางที่ 50% ของการเคลื่อนที่
+  } */
+  /* 75% {
+    transform: translate(75%, 30%); เคลื่อนที่ไปที่ 75% ในแนวนอนและ 30% ในแนวตั้ง
+  } */
+  100% {
+    transform: translate(0, 0); /*จุดสุดท้ายที่ 100% ในแนวนอน*/
+  }
+}
+.shape-container {
+  --PI: 3.1415;
+  --WAVE-COUNT: 2;
+  --TOTAL-ANGEL: calc(var(--WAVE-COUNT) * 2 * var(--PI));
+  --UNIT: 1vw;
+  --r: 5;
+  --CONTAINER-WIDTH: 100;
+  --x: calc(var(--butterfly) * var(--CONTAINER-WIDTH));
+  --ROTATION-PER-LENGTH-UNIT: calc(var(--TOTAL-ANGEL) / var(--CONTAINER-WIDTH));
+  --alpha-reference-angle: calc(var(--ROTATION-PER-LENGTH-UNIT) * var(--x) * 1rad);
+  --y: calc(-1 * var(--r) * sin(var(--alpha-reference-angle)));
+  --x-with-unit: calc(var(--x) * var(--UNIT));
+  --y-with-unit: calc(var(--y) * var(--UNIT));
+  --tan: calc(-1 * var(--r) * var(--ROTATION-PER-LENGTH-UNIT)* cos(var(--alpha-referance-angle)));
+  --beta-tangent-angle: atan(var(--tan));
+
+  position: fixed;
+  top: 100px;
+  left:0;
+  width: calc(var(--CONTAINER-WIDTH) * var(--UNIT));
+  animation: butterfly 20s ease infinite alternate; /* ใช้แอนิเมชัน butterfly */
+}
+
+.shape{
+  --shape-width: 50px;
+  --shape-height: 10px;
+  position:absolute;
+  z-index: 1;
+  top: calc( -0.5 * var(--shape-height));
+  left: calc( -0.5 * var(--shape-width));
+  width: var(--shape-width);
+  height: var(--shape-height);
+  transform: translate(var(--x-with-unit), var(--y-with-unit)); /* ใช้ตำแหน่งที่คำนวณ */
+  rotate: var(--beta-tangent-angle);
+}
+
+/* .shape-container--with-indicators{
+  border-top: 1px dotted hotpink;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--r) * var(--UNIT));
+    width: 100%;
+    height: 0;
+    border-top: 1px dotted #ccc;
+  }
+
+  &::after {
+    top: calc(var(--r) * var(--UNIT));
+  }
+} */
+
+@keyframes flutter {
+  from{ transform: rotateX(0);}
+  to{ transform: rotateX(80deg);}
+}
+path{
+  fill: currentcolor;
+}
+.butterfly_wing{
+  transform-origin: center center;
+  animation: flutter 150ms alternate infinite;
+}
+.butterfly-container {
+  /* introduce 2nd reference circle to use angle of */
+  --RADIUS-ANIMATION-ANGLE: var(--PI); /* by using an angle of pi, the sine value will always be between 0 and 1 */
+  --r-min: 2; /* minimum radius */
+  --r-max: 10; /* maximum radius */
+  --delta-r: calc(var(--r-max) - var(--r-min));
+  --gamma-reference-angle: calc(var(--progress) * var(--RADIUS-ANIMATION-ANGLE));
+  /* overwrite r we use in sine-wave-base */
+  --r: calc(var(--r-min) + var(--delta-r) * sin(var(--gamma-reference-angle)));
+}
