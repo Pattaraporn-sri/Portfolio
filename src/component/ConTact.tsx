@@ -3,9 +3,7 @@ import facebook from "../IMG/icons8-facebook-50 (2).png";
 import IG from "../IMG/icons8-ig-50 (1).png";
 import Github from "../IMG/icons8-github-50 (1).png";
 import email from "../IMG/icons8-email-50 (1).png";
-import flower from "../IMG/ดอกไม้-Photoroom.png";
-import flower2 from "../IMG/ดอกไม้2-Photoroom.png";
-import flower3 from "../IMG/ดอกไม้3-Photoroom.png";
+
 import flower4 from "../IMG/ดอกไม้4-Photoroom.png";
 import flower5 from "../IMG/ดอกไม้5-Photoroom.png";
 import { useInView } from "react-intersection-observer";

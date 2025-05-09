@@ -1,4 +1,4 @@
-import React from "react";
+
 
 function Navbar(): JSX.Element {
   const handleScroll = (id: string) => {

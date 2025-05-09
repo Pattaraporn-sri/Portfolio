@@ -18,7 +18,7 @@ const Shape :React.FC<ShapeProps> = ({ butterflyImage }) => {
     let butterfly = 0;
     let animationFrameId: number; // เก็บค่า ID ของ animation frame
 
-    const animate = (timestamp: DOMHighResTimeStamp) => {
+    const animate = () => {
       butterfly += 0.01; // เพิ่มค่า butterfly ทีละน้อย
       if (butterfly > 1) butterfly = 0; // รีเซ็ตค่าเมื่อเกิน 1
 

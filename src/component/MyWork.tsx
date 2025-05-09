@@ -1,4 +1,4 @@
-import React from "react";
+
 import dailynews from "../IMG/Daily-news-1.png";
 import Demon from "../IMG/Demon-Slayer.png";
 import { Link } from "react-router-dom";

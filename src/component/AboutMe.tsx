@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+
 import cat from "../IMG/cat-Photoroom.png";
 import { Link } from "react-router-dom";
 
 function AboutMe(): JSX.Element {
-  const [showMore, setShowMore] = useState(false);
-  const toggleDetails = () => {
-    setShowMore((prev) => !prev);
-  };
-
+  
   return (
     <div id="AboutMe" className="section">
       <div className="bg-orange-100 h-screen">

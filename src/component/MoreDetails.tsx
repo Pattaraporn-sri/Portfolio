@@ -14,8 +14,7 @@ import Univer from "../IMG/icons8-university-50 (1).png";
 import { useEffect } from "react";
 import butterfly from "../IMG/image-Photoroom.png";
 import topflower from "../IMG/image-Photoroom (1).png";
-import Shape from "./Shape";
-import butterflyimage from "src/IMG/image-Photoroom.png";
+
 
 const scrollToTop = () => {
   window.scrollTo(0, 0);
@@ -23,7 +22,7 @@ const scrollToTop = () => {
 
 const MoreDetails: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const butterflyImage = "src/IMG/image-Photoroom.png";
+  
 
   useEffect(() => {
     const handleScroll = () => {
